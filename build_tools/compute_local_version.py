@@ -19,12 +19,12 @@ import subprocess
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--write-json", action="store_true")
+parser.add_argument("--version-suffix", action="store", type=str)
 
 release_type = parser.add_mutually_exclusive_group(required=True)
 release_type.add_argument("-stable", "--stable-release", action="store_true")
 release_type.add_argument("-rc", "--nightly-release", action="store_true")
 release_type.add_argument("-dev", "--development-release", action="store_true")
-release_type.add_argument("--version-suffix", action="store", type=str)
 
 args = parser.parse_args()
 
